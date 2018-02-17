@@ -1,11 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace GithubWebhook.Common
 {
     public partial class User
     {
         [JsonProperty("date")]
-        public System.DateTime Date { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime Date { get; set; }
 
         [JsonProperty("username")]
         public string Username { get; set; }
@@ -44,10 +46,12 @@ namespace GithubWebhook.Common
         public long Following { get; set; }
 
         [JsonProperty("created_at")]
-        public System.DateTime CreatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        public System.DateTime UpdatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime UpdatedAt { get; set; }
 
         [JsonProperty("total_private_repos")]
         public long TotalPrivateRepos { get; set; }

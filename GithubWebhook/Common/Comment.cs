@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace GithubWebhook.Common
 {
@@ -6,7 +7,7 @@ namespace GithubWebhook.Common
     {
         [JsonProperty("pull_request_review_id")]
         public long PullRequestReviewId { get; set; }
-        
+
         [JsonProperty("in_reply_to_id")]
         public long InReplyToId { get; set; }
 
@@ -53,13 +54,15 @@ namespace GithubWebhook.Common
         public User User { get; set; }
 
         [JsonProperty("created_at")]
-        public System.DateTime CreatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        public System.DateTime UpdatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime UpdatedAt { get; set; }
 
         [JsonProperty("issue_url")]
         public string IssueUrl { get; set; }
     }
-    
+
 }

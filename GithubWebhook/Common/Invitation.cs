@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace GithubWebhook.Common
 {
@@ -29,7 +30,8 @@ namespace GithubWebhook.Common
         public string Permissions { get; set; }
 
         [JsonProperty("created_at")]
-        public System.DateTime CreatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

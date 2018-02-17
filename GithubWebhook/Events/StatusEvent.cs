@@ -1,4 +1,5 @@
-﻿using GithubWebhook.Common;
+﻿using System;
+using GithubWebhook.Common;
 using Newtonsoft.Json;
 
 namespace GithubWebhook.Events
@@ -36,10 +37,12 @@ namespace GithubWebhook.Events
         public Branch[] Branches { get; set; }
 
         [JsonProperty("created_at")]
-        public System.DateTime CreatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        public System.DateTime UpdatedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime UpdatedAt { get; set; }
 
         [JsonProperty("repository")]
         public Repository Repository { get; set; }

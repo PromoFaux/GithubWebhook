@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Newtonsoft.Json;
 
 namespace GithubWebhook.Common
@@ -15,7 +16,8 @@ namespace GithubWebhook.Common
         public string Body { get; set; }
 
         [JsonProperty("submitted_at")]
-        public System.DateTime SubmittedAt { get; set; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime SubmittedAt { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
