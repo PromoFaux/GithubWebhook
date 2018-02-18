@@ -23,7 +23,7 @@ namespace GithubWebhook.Events
    
     public partial class OrgBlockEvent
     {
-        public static OrgBlockEvent FromJson(string json) => JsonConvert.DeserializeObject<OrgBlockEvent>(json, GithubWebhook.Converter.Settings);
+        public static OrgBlockEvent FromJson(string json) => JsonConvert.DeserializeObject<OrgBlockEvent>(json, Converter.Settings);
     }
     
 }

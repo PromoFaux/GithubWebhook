@@ -31,7 +31,7 @@ namespace GithubWebhook.Events
 
     public partial class ProjectCardEvent
     {
-        public static ProjectCardEvent FromJson(string json) => JsonConvert.DeserializeObject<ProjectCardEvent>(json, GithubWebhook.Converter.Settings);
+        public static ProjectCardEvent FromJson(string json) => JsonConvert.DeserializeObject<ProjectCardEvent>(json, Converter.Settings);
     }
  
 }

@@ -15,7 +15,7 @@ namespace GithubWebhook.Events
 
     public partial class PublicEvent
     {
-        public static PublicEvent FromJson(string json) => JsonConvert.DeserializeObject<PublicEvent>(json, GithubWebhook.Converter.Settings);
+        public static PublicEvent FromJson(string json) => JsonConvert.DeserializeObject<PublicEvent>(json, Converter.Settings);
     }
 
 }

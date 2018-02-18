@@ -20,7 +20,7 @@ namespace GithubWebhook.Events
 
     public partial class PageBuildEvent
     {
-        public static PageBuildEvent FromJson(string json) => JsonConvert.DeserializeObject<PageBuildEvent>(json, GithubWebhook.Converter.Settings);
+        public static PageBuildEvent FromJson(string json) => JsonConvert.DeserializeObject<PageBuildEvent>(json, Converter.Settings);
     }
     
 }

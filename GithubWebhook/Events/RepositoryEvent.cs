@@ -29,7 +29,7 @@ namespace GithubWebhook.Events
 
     public partial class RepositoryEvent
     {
-        public static RepositoryEvent FromJson(string json) => JsonConvert.DeserializeObject<RepositoryEvent>(json, GithubWebhook.Converter.Settings);
+        public static RepositoryEvent FromJson(string json) => JsonConvert.DeserializeObject<RepositoryEvent>(json, Converter.Settings);
     }
 
 }

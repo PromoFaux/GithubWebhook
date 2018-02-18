@@ -27,7 +27,7 @@ namespace GithubWebhook.Events
 
     public partial class OrganizationEvent
     {
-        public static OrganizationEvent FromJson(string json) => JsonConvert.DeserializeObject<OrganizationEvent>(json, GithubWebhook.Converter.Settings);
+        public static OrganizationEvent FromJson(string json) => JsonConvert.DeserializeObject<OrganizationEvent>(json, Converter.Settings);
     }
    
 }

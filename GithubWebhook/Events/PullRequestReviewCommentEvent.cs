@@ -29,7 +29,7 @@ namespace GithubWebhook.Events
 
     public partial class PullRequestReviewCommentEvent
     {
-        public static PullRequestReviewCommentEvent FromJson(string json) => JsonConvert.DeserializeObject<PullRequestReviewCommentEvent>(json, GithubWebhook.Converter.Settings);
+        public static PullRequestReviewCommentEvent FromJson(string json) => JsonConvert.DeserializeObject<PullRequestReviewCommentEvent>(json, Converter.Settings);
     }
     
 }

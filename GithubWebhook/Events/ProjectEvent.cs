@@ -35,7 +35,7 @@ namespace GithubWebhook.Events
 
     public partial class ProjectEvent
     {
-        public static ProjectEvent FromJson(string json) => JsonConvert.DeserializeObject<ProjectEvent>(json, GithubWebhook.Converter.Settings);
+        public static ProjectEvent FromJson(string json) => JsonConvert.DeserializeObject<ProjectEvent>(json, Converter.Settings);
     }
 
 }

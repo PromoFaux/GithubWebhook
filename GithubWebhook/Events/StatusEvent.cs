@@ -52,7 +52,7 @@ namespace GithubWebhook.Events
 
     public partial class StatusEvent
     {
-        public static StatusEvent FromJson(string json) => JsonConvert.DeserializeObject<StatusEvent>(json, GithubWebhook.Converter.Settings);
+        public static StatusEvent FromJson(string json) => JsonConvert.DeserializeObject<StatusEvent>(json, Converter.Settings);
     }
 
 }

@@ -30,6 +30,6 @@ namespace GithubWebhook.Events
 
     public partial class ReleaseEvent
     {
-        public static ReleaseEvent FromJson(string json) => JsonConvert.DeserializeObject<ReleaseEvent>(json, GithubWebhook.Converter.Settings);
+        public static ReleaseEvent FromJson(string json) => JsonConvert.DeserializeObject<ReleaseEvent>(json, Converter.Settings);
     }
 }
