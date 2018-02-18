@@ -29,5 +29,7 @@ namespace GithubWebhook.Events
     public partial class LabelEvent
     {
         public static LabelEvent FromJson(string json) => JsonConvert.DeserializeObject<LabelEvent>(json, Converter.Settings);
+
+        public const string EventString = "label";
     }
 }

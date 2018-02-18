@@ -58,5 +58,7 @@ namespace GithubWebhook.Events
     public partial class PushEvent
     {
         public static PushEvent FromJson(string json) => JsonConvert.DeserializeObject<PushEvent>(json, Converter.Settings);
+
+        public const string EventString = "push";
     }
 }

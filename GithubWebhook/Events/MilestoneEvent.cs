@@ -27,5 +27,7 @@ namespace GithubWebhook.Events
     public partial class MilestoneEvent
     {
         public static MilestoneEvent FromJson(string json) => JsonConvert.DeserializeObject<MilestoneEvent>(json, Converter.Settings);
+
+        public const string EventString = "milestone";
     }
 }

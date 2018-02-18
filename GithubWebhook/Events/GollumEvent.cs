@@ -19,5 +19,7 @@ namespace GithubWebhook.Events
     public partial class GollumEvent
     {
         public static GollumEvent FromJson(string json) => JsonConvert.DeserializeObject<GollumEvent>(json, Converter.Settings);
+
+        public const string EventString = "gollum";
     }
 }

@@ -18,5 +18,7 @@ namespace GithubWebhook.Events
     public partial class InstallationEvent
     {
         public static InstallationEvent FromJson(string json) => JsonConvert.DeserializeObject<InstallationEvent>(json, Converter.Settings);
+
+        public const string EventString = "installation";
     }
 }

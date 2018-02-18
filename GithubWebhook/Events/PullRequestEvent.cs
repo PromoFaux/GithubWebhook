@@ -35,6 +35,8 @@ namespace GithubWebhook.Events
     public partial class PullRequestEvent
     {
         public static PullRequestEvent FromJson(string json) => JsonConvert.DeserializeObject<PullRequestEvent>(json, Converter.Settings);
+
+        public const string EventString = "pull_request";
     }
     
 }

@@ -22,6 +22,8 @@ namespace GithubWebhook.Events
     public partial class WatchEvent
     {
         public static WatchEvent FromJson(string json) => JsonConvert.DeserializeObject<WatchEvent>(json, Converter.Settings);
+
+        public const string EventString = "watch";
     }
    
 }

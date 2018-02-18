@@ -88,5 +88,7 @@ namespace GithubWebhook.Events
     public partial class PingEvent
     {
         public static PingEvent FromJson(string json) => JsonConvert.DeserializeObject<PingEvent>(json, Converter.Settings);
+
+        public const string EventString = "ping";
     }
 }

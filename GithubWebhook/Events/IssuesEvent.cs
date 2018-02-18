@@ -26,5 +26,8 @@ namespace GithubWebhook.Events
     public partial class IssuesEvent
     {
         public static IssuesEvent FromJson(string json) => JsonConvert.DeserializeObject<IssuesEvent>(json, Converter.Settings);
+
+        public const string EventString = "issues";
+        
     }
 }

@@ -29,5 +29,7 @@ namespace GithubWebhook.Events
     public partial class IssueCommentEvent
     {
         public static IssueCommentEvent FromJson(string json) => JsonConvert.DeserializeObject<IssueCommentEvent>(json, Converter.Settings);
+
+        public const string EventString = "issue_comment";
     }
 }

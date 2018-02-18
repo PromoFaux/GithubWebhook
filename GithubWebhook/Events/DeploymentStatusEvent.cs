@@ -17,10 +17,13 @@ namespace GithubWebhook.Events
 
         [JsonProperty("sender")]
         public User Sender { get; set; }
+        
     }
 
     public partial class DeploymentStatusEvent
     {
         public static DeploymentStatusEvent FromJson(string json) => JsonConvert.DeserializeObject<DeploymentStatusEvent>(json, Converter.Settings);
+
+        public const string EventString = "deployment_status";
     }
 }

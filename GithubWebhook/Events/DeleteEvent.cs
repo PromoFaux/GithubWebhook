@@ -22,10 +22,13 @@ namespace GithubWebhook.Events
 
         [JsonProperty("sender")]
         public User Sender { get; set; }
+
     }
 
     public partial class DeleteEvent
     {
         public static DeleteEvent FromJson(string json) => JsonConvert.DeserializeObject<DeleteEvent>(json, Converter.Settings);
+
+        public const string EventString = "delete";
     }
 }

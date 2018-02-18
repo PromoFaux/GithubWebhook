@@ -13,10 +13,13 @@ namespace GithubWebhook.Events
 
         [JsonProperty("sender")]
         public User Sender { get; set; }
+
     }
 
     public partial class ForkEvent
     {
         public static ForkEvent FromJson(string json) => JsonConvert.DeserializeObject<ForkEvent>(json, Converter.Settings);
+
+        public const string EventString = "fork";
     }
 }
