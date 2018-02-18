@@ -9,7 +9,7 @@ namespace GithubWebhook.Common
         public Tree Tree { get; set; }
 
         [JsonProperty("comment_count")]
-        public long CommentCount { get; set; }
+        public long? CommentCount { get; set; }
 
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -18,14 +18,14 @@ namespace GithubWebhook.Common
         public string TreeId { get; set; }
 
         [JsonProperty("distinct")]
-        public bool Distinct { get; set; }
+        public bool? Distinct { get; set; }
 
         [JsonProperty("message")]
         public string Message { get; set; }
 
         [JsonProperty("timestamp")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime Timestamp { get; set; }
+        
+        public DateTimeOffset? Timestamp { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

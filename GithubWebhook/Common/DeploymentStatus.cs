@@ -9,7 +9,7 @@ namespace GithubWebhook.Common
         public string Url { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -24,12 +24,12 @@ namespace GithubWebhook.Common
         public string TargetUrl { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("deployment_url")]
         public string DeploymentUrl { get; set; }

@@ -8,13 +8,13 @@ namespace GithubWebhook.Common
         public string Filename { get; set; }
 
         [JsonProperty("additions")]
-        public long Additions { get; set; }
+        public long? Additions { get; set; }
 
         [JsonProperty("deletions")]
-        public long Deletions { get; set; }
+        public long? Deletions { get; set; }
 
         [JsonProperty("changes")]
-        public long Changes { get; set; }
+        public long? Changes { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }

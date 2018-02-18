@@ -7,7 +7,7 @@ namespace GithubWebhook.Common
     public partial class Review
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("user")]
         public User User { get; set; }
@@ -16,8 +16,7 @@ namespace GithubWebhook.Common
         public string Body { get; set; }
 
         [JsonProperty("submitted_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime SubmittedAt { get; set; }
+        public DateTimeOffset? SubmittedAt { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }

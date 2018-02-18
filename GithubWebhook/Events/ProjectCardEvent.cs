@@ -14,7 +14,7 @@ namespace GithubWebhook.Events
         //TODO: [JsonProperty("changes")]
 
         [JsonProperty("after_id")]
-        public long AfterId { get; set; }
+        public long? AfterId { get; set; }
 
         [JsonProperty("project_card")]
         public ProjectCard ProjectCard { get; set; }

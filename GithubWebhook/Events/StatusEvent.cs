@@ -7,7 +7,7 @@ namespace GithubWebhook.Events
     public partial class StatusEvent
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("sha")]
         public string Sha { get; set; }
@@ -37,12 +37,10 @@ namespace GithubWebhook.Events
         public Branch[] Branches { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("repository")]
         public Repository Repository { get; set; }

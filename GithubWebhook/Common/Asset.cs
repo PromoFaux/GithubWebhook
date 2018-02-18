@@ -12,7 +12,7 @@ namespace GithubWebhook.Common
         public string BrowserDownloadUrl { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -27,18 +27,16 @@ namespace GithubWebhook.Common
         public string ContentType { get; set; }
 
         [JsonProperty("size")]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         [JsonProperty("download_count")]
-        public long DownloadCount { get; set; }
+        public long? DownloadCount { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+         public DateTimeOffset?  CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+         public DateTimeOffset?  UpdatedAt { get; set; }
 
         [JsonProperty("uploader")]
         public User Uploader { get; set; }

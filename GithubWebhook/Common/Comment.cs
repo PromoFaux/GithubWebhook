@@ -6,16 +6,16 @@ namespace GithubWebhook.Common
     public partial class Comment
     {
         [JsonProperty("pull_request_review_id")]
-        public long PullRequestReviewId { get; set; }
+        public long? PullRequestReviewId { get; set; }
 
         [JsonProperty("in_reply_to_id")]
-        public long InReplyToId { get; set; }
+        public long? InReplyToId { get; set; }
 
         [JsonProperty("diff_hunk")]
         public string DiffHunk { get; set; }
 
         [JsonProperty("original_position")]
-        public long OriginalPosition { get; set; }
+        public long? OriginalPosition { get; set; }
 
         [JsonProperty("original_commit_id")]
         public string OriginalCommitId { get; set; }
@@ -33,7 +33,7 @@ namespace GithubWebhook.Common
         public string Url { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("body")]
         public string Body { get; set; }
@@ -42,10 +42,10 @@ namespace GithubWebhook.Common
         public string Path { get; set; }
 
         [JsonProperty("position")]
-        public long Position { get; set; }
+        public long? Position { get; set; }
 
         [JsonProperty("line")]
-        public long Line { get; set; }
+        public long? Line { get; set; }
 
         [JsonProperty("commit_id")]
         public string CommitId { get; set; }
@@ -54,12 +54,12 @@ namespace GithubWebhook.Common
         public User User { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("issue_url")]
         public string IssueUrl { get; set; }

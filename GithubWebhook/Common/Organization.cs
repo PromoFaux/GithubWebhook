@@ -21,41 +21,41 @@ namespace GithubWebhook.Common
         public string Email { get; set; }
 
         [JsonProperty("public_repos")]
-        public long PublicRepos { get; set; }
+        public long? PublicRepos { get; set; }
 
         [JsonProperty("public_gists")]
-        public long PublicGists { get; set; }
+        public long? PublicGists { get; set; }
 
         [JsonProperty("followers")]
-        public long Followers { get; set; }
+        public long? Followers { get; set; }
 
         [JsonProperty("following")]
-        public long Following { get; set; }
+        public long? Following { get; set; }
 
         [JsonProperty("html_url")]
         public string HtmlUrl { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("type")]
         public string Type { get; set; }
 
         [JsonProperty("total_private_repos")]
-        public long TotalPrivateRepos { get; set; }
+        public long? TotalPrivateRepos { get; set; }
 
         [JsonProperty("owned_private_repos")]
-        public long OwnedPrivateRepos { get; set; }
+        public long? OwnedPrivateRepos { get; set; }
 
         [JsonProperty("private_gists")]
-        public long PrivateGists { get; set; }
+        public long? PrivateGists { get; set; }
 
         [JsonProperty("disk_usage")]
-        public long DiskUsage { get; set; }
+        public long? DiskUsage { get; set; }
 
         [JsonProperty("collaborators")]
-        public long Collaborators { get; set; }
+        public long? Collaborators { get; set; }
 
         [JsonProperty("billing_email")]
         public string BillingEmail { get; set; }
@@ -67,13 +67,13 @@ namespace GithubWebhook.Common
         public string DefaultRepositorySettings { get; set; }
 
         [JsonProperty("members_can_create_repositories")]
-        public bool MembersCanCreateRepositories { get; set; }
+        public bool? MembersCanCreateRepositories { get; set; }
 
         [JsonProperty("login")]
         public string Login { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

@@ -14,7 +14,7 @@ namespace GithubWebhook.Events
         public string Action { get; set; }
 
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         //TODO: [JsonProperty("changes")]
 

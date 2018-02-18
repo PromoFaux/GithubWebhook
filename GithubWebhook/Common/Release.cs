@@ -24,7 +24,7 @@ namespace GithubWebhook.Common
         public string ZipballUrl { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("tag_name")]
         public string TagName { get; set; }
@@ -39,18 +39,18 @@ namespace GithubWebhook.Common
         public string Body { get; set; }
 
         [JsonProperty("draft")]
-        public bool Draft { get; set; }
+        public bool? Draft { get; set; }
 
         [JsonProperty("prerelease")]
-        public bool Prerelease { get; set; }
+        public bool? Prerelease { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("published_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime PublishedAt { get; set; }
+        
+        public DateTimeOffset? PublishedAt { get; set; }
 
         [JsonProperty("author")]
         public User Author { get; set; }

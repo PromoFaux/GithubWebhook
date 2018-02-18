@@ -20,8 +20,8 @@ namespace GithubWebhook.Common
         [JsonProperty("issue")]
         public Link Issue { get; set; }
 
-        [JsonProperty("comments")]
-        public Link Link { get; set; }
+        //[JsonProperty("comments")]
+        //public Link Link { get; set; }
 
         [JsonProperty("review_comments")]
         public Link ReviewComments { get; set; }

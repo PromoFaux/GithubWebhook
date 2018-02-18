@@ -7,7 +7,7 @@ namespace GithubWebhook.Common
     public partial class Issue
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -28,7 +28,7 @@ namespace GithubWebhook.Common
         public string HtmlUrl { get; set; }
 
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -55,13 +55,13 @@ namespace GithubWebhook.Common
         public Milestone Milestone { get; set; }
 
         [JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         [JsonProperty("active_lock_reason")]
         public string ActiveLockReason { get; set; }
 
         [JsonProperty("comments")]
-        public long Comments { get; set; }
+        public long? Comments { get; set; }
 
         [JsonProperty("pull_request")]
         public PullRequest PullRequest { get; set; }
@@ -70,12 +70,12 @@ namespace GithubWebhook.Common
         public object ClosedAt { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("closed_by")]
         public User ClosedBy { get; set; }

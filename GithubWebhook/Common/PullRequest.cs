@@ -10,7 +10,7 @@ namespace GithubWebhook.Common
         public User[] Assignees { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("issue_url")]
         public string IssueUrl { get; set; }
@@ -31,7 +31,7 @@ namespace GithubWebhook.Common
         public string StatusesUrl { get; set; }
 
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -52,26 +52,22 @@ namespace GithubWebhook.Common
         public Milestone Milestone { get; set; }
 
         [JsonProperty("locked")]
-        public bool Locked { get; set; }
+        public bool? Locked { get; set; }
 
         [JsonProperty("active_lock_reason")]
         public string ActiveLockReason { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+         public DateTimeOffset?  CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+         public DateTimeOffset?  UpdatedAt { get; set; }
 
         [JsonProperty("closed_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime ClosedAt { get; set; }
+         public DateTimeOffset?  ClosedAt { get; set; }
 
         [JsonProperty("merged_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime MergedAt { get; set; }
+         public DateTimeOffset?  MergedAt { get; set; }
 
         [JsonProperty("head")]
         public Base Head { get; set; }
@@ -89,37 +85,37 @@ namespace GithubWebhook.Common
         public string MergeCommitSha { get; set; }
 
         [JsonProperty("merged")]
-        public bool Merged { get; set; }
+        public bool? Merged { get; set; }
 
         [JsonProperty("mergeable")]
-        public bool Mergeable { get; set; }
+        public bool? Mergeable { get; set; }
 
         [JsonProperty("merged_by")]
         public User MergedBy { get; set; }
 
         [JsonProperty("comments")]
-        public long Comments { get; set; }
+        public long? Comments { get; set; }
 
         [JsonProperty("commits")]
-        public long Commits { get; set; }
+        public long? Commits { get; set; }
 
         [JsonProperty("additions")]
-        public long Additions { get; set; }
+        public long? Additions { get; set; }
 
         [JsonProperty("deletions")]
-        public long Deletions { get; set; }
+        public long? Deletions { get; set; }
 
         [JsonProperty("changed_files")]
-        public long ChangedFiles { get; set; }
+        public long? ChangedFiles { get; set; }
 
         [JsonProperty("maintainer_can_modify")]
-        public bool MaintainerCanModify { get; set; }
+        public bool? MaintainerCanModify { get; set; }
 
         [JsonProperty("mergeable_state")]
         public string MergeableState { get; set; }
 
         [JsonProperty("review_comments")]
-        public long ReviewComments { get; set; }
+        public long? ReviewComments { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

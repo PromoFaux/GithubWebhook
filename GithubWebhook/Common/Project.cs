@@ -18,7 +18,7 @@ namespace GithubWebhook.Common
         public string ColumnsUrl { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -27,7 +27,7 @@ namespace GithubWebhook.Common
         public string Body { get; set; }
 
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -36,12 +36,12 @@ namespace GithubWebhook.Common
         public User Creator { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
     }
 
 }

@@ -6,7 +6,7 @@ namespace GithubWebhook.Events
     public partial class PageBuildEvent
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("build")]
         public Build Build { get; set; }

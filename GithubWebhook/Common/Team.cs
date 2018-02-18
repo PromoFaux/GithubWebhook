@@ -6,7 +6,7 @@ namespace GithubWebhook.Common
     public partial class Team
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -36,18 +36,16 @@ namespace GithubWebhook.Common
         public object Parent { get; set; }
 
         [JsonProperty("members_count")]
-        public long MembersCount { get; set; }
+        public long? MembersCount { get; set; }
 
         [JsonProperty("repos_count")]
-        public long ReposCount { get; set; }
+        public long? ReposCount { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("organization")]
         public Organization Organization { get; set; }

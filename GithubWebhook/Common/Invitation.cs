@@ -15,7 +15,7 @@ namespace GithubWebhook.Common
         public string Role { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("repository")]
         public Repository Repository { get; set; }
@@ -30,8 +30,8 @@ namespace GithubWebhook.Common
         public string Permissions { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

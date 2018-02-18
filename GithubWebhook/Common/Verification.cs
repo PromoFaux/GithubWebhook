@@ -5,7 +5,7 @@ namespace GithubWebhook.Common
     public partial class Verification
     {
         [JsonProperty("verified")]
-        public bool Verified { get; set; }
+        public bool? Verified { get; set; }
 
         [JsonProperty("reason")]
         public string Reason { get; set; }

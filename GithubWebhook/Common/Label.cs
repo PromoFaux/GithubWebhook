@@ -5,7 +5,7 @@ namespace GithubWebhook.Common
     public partial class Label
     {
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -17,6 +17,6 @@ namespace GithubWebhook.Common
         public string Color { get; set; }
 
         [JsonProperty("default")]
-        public bool Default { get; set; }
+        public bool? Default { get; set; }
     }
 }

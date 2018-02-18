@@ -24,13 +24,13 @@ namespace GithubWebhook.Events
         public int DistinctSize { get; set; }
 
         [JsonProperty("created")]
-        public bool Created { get; set; }
+        public bool? Created { get; set; }
 
         [JsonProperty("deleted")]
-        public bool Deleted { get; set; }
+        public bool? Deleted { get; set; }
 
         [JsonProperty("forced")]
-        public bool Forced { get; set; }
+        public bool? Forced { get; set; }
 
         [JsonProperty("base_ref")]
         public object BaseRef { get; set; }

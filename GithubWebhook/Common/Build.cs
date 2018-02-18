@@ -21,15 +21,13 @@ namespace GithubWebhook.Common
         public string Commit { get; set; }
 
         [JsonProperty("duration")]
-        public long Duration { get; set; }
+        public long? Duration { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+         public DateTimeOffset?  CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+         public DateTimeOffset?  UpdatedAt { get; set; }
     }
 
 

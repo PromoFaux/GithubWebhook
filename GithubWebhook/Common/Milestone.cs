@@ -15,10 +15,10 @@ namespace GithubWebhook.Common
         public string LabelsUrl { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("number")]
-        public long Number { get; set; }
+        public long? Number { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -33,25 +33,25 @@ namespace GithubWebhook.Common
         public User Creator { get; set; }
 
         [JsonProperty("open_issues")]
-        public long OpenIssues { get; set; }
+        public long? OpenIssues { get; set; }
 
         [JsonProperty("closed_issues")]
-        public long ClosedIssues { get; set; }
+        public long? ClosedIssues { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("closed_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime ClosedAt { get; set; }
+        
+        public DateTimeOffset? ClosedAt { get; set; }
 
         [JsonProperty("due_on")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime DueOn { get; set; }
+        
+        public DateTimeOffset? DueOn { get; set; }
     }
 }

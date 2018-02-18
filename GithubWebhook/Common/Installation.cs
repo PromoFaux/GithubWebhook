@@ -9,7 +9,7 @@ namespace GithubWebhook.Common
         public string HtmlUrl { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("account")]
         public User Account { get; set; }

@@ -6,8 +6,8 @@ namespace GithubWebhook.Common
     public partial class User
     {
         [JsonProperty("date")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime Date { get; set; }
+        
+        public DateTimeOffset? Date { get; set; }
 
         [JsonProperty("username")]
         public string Username { get; set; }
@@ -28,48 +28,48 @@ namespace GithubWebhook.Common
         public string Email { get; set; }
 
         [JsonProperty("hireable")]
-        public bool Hireable { get; set; }
+        public bool? Hireable { get; set; }
 
         [JsonProperty("bio")]
         public string Bio { get; set; }
 
         [JsonProperty("public_repos")]
-        public long PublicRepos { get; set; }
+        public long? PublicRepos { get; set; }
 
         [JsonProperty("public_gists")]
-        public long PublicGists { get; set; }
+        public long? PublicGists { get; set; }
 
         [JsonProperty("followers")]
-        public long Followers { get; set; }
+        public long? Followers { get; set; }
 
         [JsonProperty("following")]
-        public long Following { get; set; }
+        public long? Following { get; set; }
 
         [JsonProperty("created_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime CreatedAt { get; set; }
+        
+        public DateTimeOffset? CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        [JsonConverter(typeof(UnixDateTimeConverter))]
-        public DateTime UpdatedAt { get; set; }
+        
+        public DateTimeOffset? UpdatedAt { get; set; }
 
         [JsonProperty("total_private_repos")]
-        public long TotalPrivateRepos { get; set; }
+        public long? TotalPrivateRepos { get; set; }
 
         [JsonProperty("owned_private_repos")]
-        public long OwnedPrivateRepos { get; set; }
+        public long? OwnedPrivateRepos { get; set; }
 
         [JsonProperty("private_gists")]
-        public long PrivateGists { get; set; }
+        public long? PrivateGists { get; set; }
 
         [JsonProperty("disk_usage")]
-        public long DiskUsage { get; set; }
+        public long? DiskUsage { get; set; }
 
         [JsonProperty("collaborators")]
-        public long Collaborators { get; set; }
+        public long? Collaborators { get; set; }
 
         [JsonProperty("two_factor_authentication")]
-        public bool TwoFactorAuthentication { get; set; }
+        public bool? TwoFactorAuthentication { get; set; }
 
         [JsonProperty("plan")]
         public Plan Plan { get; set; }
@@ -78,7 +78,7 @@ namespace GithubWebhook.Common
         public string Login { get; set; }
 
         [JsonProperty("id")]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         [JsonProperty("avatar_url")]
         public string AvatarUrl { get; set; }
@@ -123,7 +123,7 @@ namespace GithubWebhook.Common
         public string Type { get; set; }
 
         [JsonProperty("site_admin")]
-        public bool SiteAdmin { get; set; }
+        public bool? SiteAdmin { get; set; }
     }
 
 }

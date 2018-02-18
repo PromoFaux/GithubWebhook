@@ -5,13 +5,13 @@ namespace GithubWebhook.Common
     public partial class Permissions
     {
         [JsonProperty("admin")]
-        public bool Admin { get; set; }
+        public bool? Admin { get; set; }
 
         [JsonProperty("push")]
-        public bool Push { get; set; }
+        public bool? Push { get; set; }
 
         [JsonProperty("pull")]
-        public bool Pull { get; set; }
+        public bool? Pull { get; set; }
     }
 
 }
