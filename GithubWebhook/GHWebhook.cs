@@ -18,10 +18,10 @@ namespace GithubWebhook
         };
     }
 
-    public class GithubWebhook
+    public class GhWebhook
     {
         [Obsolete("This can still be used, but it is preffered to pass in the HttpRequest instead.")]
-        public GithubWebhook(string strEvent, string signature, string delivery, string payloadText)
+        public GhWebhook(string strEvent, string signature, string delivery, string payloadText)
         {
             Event = strEvent;
             Signature = signature;
@@ -31,7 +31,7 @@ namespace GithubWebhook
             PayloadObject = ConvertPayload();
         }
 
-        public GithubWebhook(HttpRequest hookIn)
+        public GhWebhook(HttpRequest hookIn)
         {
             hookIn.Headers.TryGetValue("X-GitHub-Event", out var strEvent);
             hookIn.Headers.TryGetValue("X-Hub-Signature", out var signature);
