@@ -127,7 +127,7 @@ namespace GithubWebhook.Tests
             var context = new DefaultHttpContext();
             context.Request.ContentType = "application/json";
             var text = validSha1 ? "sha1=" : "";
-            context.Request.Headers.Add("X-Hub-Signature", $"{text}21537deddfc89e6d0bcd04bb38d9d9cd618907ee");
+            context.Request.Headers.Add("X-Hub-Signature", $"{text}08da62a7e389b818f9f8cb1eaca0caede83eb93a");
             context.Request.Headers.Add("X-Github-Event", $"{type}");
             context.Request.Body = ConvertResourceFileToMemoryStream($"{type}");
             return context.Request;
