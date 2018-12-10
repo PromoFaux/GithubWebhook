@@ -31,7 +31,7 @@ namespace GithubWebhook
             
         }
 
-        public GhWebhook(HttpRequest hookIn)
+        public GhWebhook(HttpRequest hookIn, string clientSecret ="")
         {
             hookIn.Headers.TryGetValue("X-GitHub-Event", out var strEvent);
             hookIn.Headers.TryGetValue("X-Hub-Signature", out var signature);
@@ -39,7 +39,7 @@ namespace GithubWebhook
             hookIn.Headers.TryGetValue("Content-type", out var content);
 
             Event = strEvent;
-            Signature = signature;
+            Signature = signature; //TODO: Validate signature
             Delivery = delivery;
 
             if (content != "application/json")
@@ -52,9 +52,15 @@ namespace GithubWebhook
                 PayloadText = reader.ReadToEnd();
             }
 
+            if (!string.IsNullOrEmpty(Signature))
+            {
+                if (! SignatureValid(clientSecret))
+                {
+                    throw new Exception($"Invalid Signature. Expected {GetExpectedSignature(clientSecret)}");
+                }                
+            }
+
             PayloadObject = ConvertPayload();
-
-
 
         }
 
@@ -68,7 +74,7 @@ namespace GithubWebhook
         private static string ValidateSignature(string payload, string signatureWithPrefix, string secret)
         {
             if (!signatureWithPrefix.StartsWith("sha1=", StringComparison.OrdinalIgnoreCase))
-                return "Invalid shaPrefix";
+                throw new Exception("Invalid shaPrefix");
 
             var secretBytes = Encoding.UTF8.GetBytes(secret);
             var payloadBytes = Encoding.UTF8.GetBytes(payload);
@@ -162,12 +168,12 @@ namespace GithubWebhook
         }
 
 
-        public bool SignatureValid(string clientSecret)
+        private bool SignatureValid(string clientSecret)
         {
             return ValidateSignature(PayloadText, Signature, clientSecret) == Signature;
         }
 
-        public string GetExpectedSignature(string clientSecret)
+        private string GetExpectedSignature(string clientSecret)
         {
             return ValidateSignature(PayloadText, Signature, clientSecret);
         }

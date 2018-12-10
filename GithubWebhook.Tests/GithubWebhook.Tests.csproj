@@ -7,6 +7,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resource\commit_comment.json" />
+    <None Remove="Resource\Create.json" />
+    <None Remove="Resource\delete.json" />
+    <None Remove="Resource\deployment.json" />
+    <None Remove="Resource\deployment_status.json" />
+    <None Remove="Resource\fork.json" />
+    <None Remove="Resource\Gollum.json" />
+    <None Remove="Resource\pull_request.json" />
+    <None Remove="Resource\Push.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\gollum.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\fork.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\deployment_status.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\deployment.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\delete.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\commit_comment.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\create.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\pull_request.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\push.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
@@ -14,15 +59,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GithubWebhook\GithubWebhook.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resource\PullRequest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resource\Push.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

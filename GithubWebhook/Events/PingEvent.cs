@@ -3,7 +3,11 @@ using GithubWebhook.Common;
 using Newtonsoft.Json;
 
 namespace GithubWebhook.Events
-{
+{ 
+
+    /// <summary>
+    /// Not tested!
+    /// </summary>
     public partial class PingEvent
     {
         [JsonProperty("zen")]
