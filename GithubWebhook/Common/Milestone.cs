@@ -38,20 +38,20 @@ namespace GithubWebhook.Common
         [JsonProperty("closed_issues")]
         public long? ClosedIssues { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("updated_at")]
-        
-        public DateTimeOffset? UpdatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("updated_at")]        
+        public DateTime? UpdatedAt { get; set; }
 
-        [JsonProperty("closed_at")]
-        
-        public DateTimeOffset? ClosedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("closed_at")]        
+        public DateTime? ClosedAt { get; set; }
 
-        [JsonProperty("due_on")]
-        
-        public DateTimeOffset? DueOn { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("due_on")]        
+        public DateTime? DueOn { get; set; }
     }
 }

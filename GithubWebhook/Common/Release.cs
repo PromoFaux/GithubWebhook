@@ -44,13 +44,13 @@ namespace GithubWebhook.Common
         [JsonProperty("prerelease")]
         public bool? Prerelease { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("published_at")]
-        
-        public DateTimeOffset? PublishedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("published_at")]        
+        public DateTime? PublishedAt { get; set; }
 
         [JsonProperty("author")]
         public User Author { get; set; }

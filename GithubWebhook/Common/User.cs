@@ -5,9 +5,9 @@ namespace GithubWebhook.Common
 {
     public partial class User
     {
-        [JsonProperty("date")]
-        
-        public DateTimeOffset? Date { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("date")]        
+        public DateTime? Date { get; set; }
 
         [JsonProperty("username")]
         public string Username { get; set; }
@@ -45,13 +45,13 @@ namespace GithubWebhook.Common
         [JsonProperty("following")]
         public long? Following { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("updated_at")]
-        
-        public DateTimeOffset? UpdatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("updated_at")]        
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("total_private_repos")]
         public long? TotalPrivateRepos { get; set; }

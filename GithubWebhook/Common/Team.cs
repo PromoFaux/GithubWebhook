@@ -41,11 +41,13 @@ namespace GithubWebhook.Common
         [JsonProperty("repos_count")]
         public long? ReposCount { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("created_at")]
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("updated_at")]
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("organization")]
         public Organization Organization { get; set; }

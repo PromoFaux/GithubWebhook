@@ -35,9 +35,9 @@ namespace GithubWebhook.Common
         [JsonProperty("html_url")]
         public string HtmlUrl { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("type")]
         public string Type { get; set; }

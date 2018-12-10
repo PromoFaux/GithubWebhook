@@ -35,13 +35,13 @@ namespace GithubWebhook.Common
         [JsonProperty("creator")]
         public User Creator { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("updated_at")]
-        
-        public DateTimeOffset? UpdatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("updated_at")]        
+        public DateTime? UpdatedAt { get; set; }
     }
 
 }

@@ -53,13 +53,13 @@ namespace GithubWebhook.Common
         [JsonProperty("user")]
         public User User { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("updated_at")]
-        
-        public DateTimeOffset? UpdatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("updated_at")]        
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("issue_url")]
         public string IssueUrl { get; set; }

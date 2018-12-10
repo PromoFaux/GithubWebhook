@@ -23,13 +23,13 @@ namespace GithubWebhook.Common
         [JsonProperty("target_url")]
         public string TargetUrl { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("updated_at")]
-        
-        public DateTimeOffset? UpdatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("updated_at")]        
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("deployment_url")]
         public string DeploymentUrl { get; set; }

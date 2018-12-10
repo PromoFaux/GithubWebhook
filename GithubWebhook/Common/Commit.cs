@@ -24,8 +24,9 @@ namespace GithubWebhook.Common
         public string Message { get; set; }
 
         [JsonProperty("timestamp")]
-        
-        public DateTimeOffset? Timestamp { get; set; }
+
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        public DateTime? Timestamp { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

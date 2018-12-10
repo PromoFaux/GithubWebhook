@@ -42,11 +42,13 @@ namespace GithubWebhook.Events
         [JsonProperty("config")]
         public Config Config { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("updated_at")]
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("created_at")]
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

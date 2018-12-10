@@ -29,9 +29,9 @@ namespace GithubWebhook.Common
         [JsonProperty("permissions")]
         public string Permissions { get; set; }
 
-        [JsonProperty("created_at")]
-        
-        public DateTimeOffset? CreatedAt { get; set; }
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
+        [JsonProperty("created_at")]        
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("url")]
         public string Url { get; set; }

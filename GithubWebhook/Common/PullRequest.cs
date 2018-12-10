@@ -57,17 +57,21 @@ namespace GithubWebhook.Common
         [JsonProperty("active_lock_reason")]
         public string ActiveLockReason { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("created_at")]
-         public DateTimeOffset?  CreatedAt { get; set; }
+         public DateTime?  CreatedAt { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("updated_at")]
-         public DateTimeOffset?  UpdatedAt { get; set; }
+         public DateTime?  UpdatedAt { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("closed_at")]
-         public DateTimeOffset?  ClosedAt { get; set; }
+         public DateTime?  ClosedAt { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("merged_at")]
-         public DateTimeOffset?  MergedAt { get; set; }
+         public DateTime?  MergedAt { get; set; }
 
         [JsonProperty("head")]
         public Base Head { get; set; }

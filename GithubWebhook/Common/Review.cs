@@ -15,8 +15,9 @@ namespace GithubWebhook.Common
         [JsonProperty("body")]
         public string Body { get; set; }
 
+        [JsonConverter(typeof(GithubInconsistentDateTimeTypeConverter))]
         [JsonProperty("submitted_at")]
-        public DateTimeOffset? SubmittedAt { get; set; }
+        public DateTime? SubmittedAt { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
